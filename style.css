@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&display=swap");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    font-family: "Lato", sans-serif;
+    font-family: "Josefin Sans", sans-serif;
 }
 li {
     list-style: none;
@@ -14,65 +14,44 @@ li {
     width: 70%;
     margin: auto;
     padding: 2rem 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 ul {
     display: flex;
     justify-content: space-around;
 }
-.navbar1 li,
-.navbar3 li,
-.navbar4 li,
-.navbar2 li {
-    font-size: 1rem;
+.navbar {
+    width: 100%;
+}
+.navbar li {
+    font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 1px;
     position: relative;
     z-index: 2;
-    padding: 0.3rem 0;
+    padding: 0.3rem 0.5rem;
     cursor: pointer;
+    text-align: center;
 }
-.navbar1 li {
-    transition: color 0.5s ease-in-out;
-}
-.navbar1 li::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -10px;
-    z-index: -1;
-    width: 3px;
-    height: 100%;
-    background-color: orange;
-    transition: width 0.5s ease-in-out;
-}
-.navbar1 li:hover {
-    color: white;
-}
-.navbar1 li:hover::after {
-    width: 140%;
-}
-.navbar {
-    margin-top: 2rem;
-}
-
-/* ======================= navbar 2 =========================== */
-.navbar2 li:hover::after {
+.navbar li:hover::after {
     width: 140%;
     height: 3px;
     bottom: 0;
 }
-.navbar2 li::after {
+.navbar li::after {
     content: "";
     position: absolute;
     background-color: orange;
     width: 0px;
     height: 0px;
-    /* border-radius: 50%; */
     top: -3rem;
-    left: -10px;
+    left: 0;
 }
-.navbar2 li:hover::after {
-    animation: widthAnimation 2s ease-in-out forwards;
+.navbar li:hover::after {
+    animation: widthAnimation 3s ease-in-out forwards;
 }
 @keyframes widthAnimation {
     0% {
@@ -81,69 +60,40 @@ ul {
         top: -3rem;
         border-radius: 50%;
     }
-    20% {
-        top: 28px;
+    10% {
+        top: 36px;
         width: 5px;
         height: 5px;
+        border-radius: 50%;
+    }
+    30% {
+        top: 5px;
+        height: 5px;
+        width: 5px;
         border-radius: 50%;
     }
     40% {
-        top: 14px;
+        top: 34px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+    }
+    60% {
+        top: 12px;
         height: 5px;
         width: 5px;
         border-radius: 50%;
     }
-    60% {
-        top: 28px;
+    80% {
+        top: 36px;
         width: 5px;
         height: 5px;
-        border-radius: 0;
+        border-radius: 50%;
     }
     100% {
-        top: 28px;
-        width: 140%;
+        top: 36px;
+        width: 100%;
         height: 3px;
         border-radius: 0;
     }
-}
-
-/* ======================= navbar 3 =========================== */
-.navbar3 li {
-    padding: 0.3rem 0.5rem;
-    transition: color 0.5s ease-in-out;
-}
-.navbar3 li:hover {
-    color: white;
-}
-.navbar3 li::after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: orange;
-    transition: height 0.5s ease-in-out;
-}
-.navbar3 li:hover::after {
-    height: 100%;
-    z-index: -1;
-}
-
-/* ======================= navbar 4 =========================== */
-/* .navbar4 li {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-} */
-.navbar4 li:hover::after {
-    content: "";
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 3px;
-    border-radius: 50%;
-    background-color: orange;
-    z-index: -1;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
